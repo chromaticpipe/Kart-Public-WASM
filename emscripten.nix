@@ -1,7 +1,7 @@
 { lib, stdenv, fetchurl, fetchFromGitHub, substituteAll, cmake, curl, nasm
 , unzip, game-music-emu, libpng, SDL2, SDL2_mixer, zlib, buildEmscriptenPackage
 , libelf, openssl, emscripten, emscriptenPackages, libogg, emscriptenStdenv
-, breakpointHook, unar, debug ? true }:
+, breakpointHook, unar, debug ? false }:
 
 let
 
