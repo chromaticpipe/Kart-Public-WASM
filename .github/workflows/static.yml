@@ -39,7 +39,7 @@ jobs:
         uses: cachix/install-nix-action@v22
 
       - name: Build
-        run: nix build --max-jobs 3 --cores 3
+        run: nix build -j3
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
