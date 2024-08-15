@@ -36,16 +36,21 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v22
-
+        uses: cachix/install-nix-action@v27
+        
+      - name: Cache Nix
+        uses: DeterminateSystems/magic-nix-cache-action@v6 
+      
       - name: Build
-        run: nix build --max-jobs auto --cores 4
+        run: nix build --max-jobs auto --cores 4 
+      
+      
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: "result"
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4.0.5
