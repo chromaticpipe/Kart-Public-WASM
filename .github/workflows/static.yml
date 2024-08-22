@@ -35,7 +35,7 @@ jobs:
         uses: actions/configure-pages@v3
       
       - name: Setup emsdk
-        uses: mymindstorm/setup-emsdk@v11
+        uses: mymindstorm/setup-emsdk@v14
         with:
           # Make sure to set a version number!
           version: 3.1.42
@@ -72,10 +72,10 @@ jobs:
           emmake make -j$(nproc)
         
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           # Upload entire repository
           path: './build/bin'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4.0.5
